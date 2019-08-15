@@ -52,7 +52,7 @@ end
 --===============================================
 Citizen.CreateThread(function()
 	if showblips then
-		for k,v in ipairs(Config.Banks)do
+		for k,v in pairs(Config.Banks)do
 		local blip = AddBlipForCoord(v.x, v.y, v.z)
 		SetBlipSprite(blip, v.id)
 		SetBlipScale(blip, 0.7)
