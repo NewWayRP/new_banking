@@ -1,8 +1,26 @@
-client_script('client/client.lua')
+resource_manifest_version '05cfa83c-a124-4cfa-a768-c24a5811d8f9'
+
+description 'The New Way of Banking'
+
+version '1.0.0'
+
+client_scripts {
+  '@es_extended/locale.lua',
+  'locales/en.lua',
+  'locales/fr.lua',
+  'locales/nl.lua',
+  'config.lua',
+  'client/main.lua'
+}
 
 server_scripts {
-    '@mysql-async/lib/MySQL.lua',
-    'server.lua'
+	'@es_extended/locale.lua',
+	'locales/en.lua',
+	'locales/fr.lua',
+	'locales/nl.lua',
+	'config.lua',
+	'@mysql-async/lib/MySQL.lua',
+	'server/main.lua'
 }
 
 -- Uncomment the desired version 
