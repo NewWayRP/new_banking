@@ -6,8 +6,9 @@ version '1.0.0'
 
 client_scripts {
   '@es_extended/locale.lua',
-  'locales/en.lua',  
+  'locales/en.lua',
   'locales/fr.lua',
+  'locales/nl.lua',
   'config.lua',
   'client/main.lua'
 }
@@ -15,10 +16,11 @@ client_scripts {
 server_scripts {
 	'@es_extended/locale.lua',
 	'locales/en.lua',
-	'locales/fr.lua',	
+	'locales/fr.lua',
+	'locales/nl.lua',
 	'config.lua',
-    '@mysql-async/lib/MySQL.lua',
-    'server/main.lua'
+	'@mysql-async/lib/MySQL.lua',
+	'server/main.lua'
 }
 
 -- Uncomment the desired version 
