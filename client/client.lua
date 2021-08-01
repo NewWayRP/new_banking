@@ -197,16 +197,20 @@ end)
 --==           Deposit Event                   ==
 --===============================================
 RegisterNUICallback('deposit', function(data)
-	TriggerServerEvent('bank:deposit', tonumber(data.amount))
-	TriggerServerEvent('bank:balance')
+	if nearBank() or nearATM() then
+		TriggerServerEvent('bank:deposit', tonumber(data.amount))
+		TriggerServerEvent('bank:balance')
+	end
 end)
 
 --===============================================
 --==          Withdraw Event                   ==
 --===============================================
 RegisterNUICallback('withdrawl', function(data)
-	TriggerServerEvent('bank:withdraw', tonumber(data.amountw))
-	TriggerServerEvent('bank:balance')
+	if nearBank() or nearATM() then
+		TriggerServerEvent('bank:withdraw', tonumber(data.amountw))
+		TriggerServerEvent('bank:balance')
+	end
 end)
 
 --===============================================
@@ -226,8 +230,10 @@ end)
 --==         Transfer Event                    ==
 --===============================================
 RegisterNUICallback('transfer', function(data)
-	TriggerServerEvent('bank:transfer', data.to, data.amountt)
-	TriggerServerEvent('bank:balance')
+	if nearBank() or nearATM() then
+		TriggerServerEvent('bank:transfer', data.to, data.amountt)
+		TriggerServerEvent('bank:balance')
+	end
 end)
 
 --===============================================
